@@ -11,10 +11,14 @@ class IndexController extends Controller
    }
    
    public function login(){
-       return view('login');
+       return view('index');
    }
    
-   public function main(){
-       return view('main');
-   }
+//   public function signup(){
+//       return view('signup');
+//   }
+//   
+//   public function main(){
+//       return view('main');
+//   }
 }

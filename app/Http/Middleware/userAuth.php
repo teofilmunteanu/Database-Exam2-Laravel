@@ -16,9 +16,12 @@ class userAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->check()){
-
+        
+        if (!Session::has('email') && !Cookie::has('email')){
             return redirect()->route('login');
+        }
+        else if(Cookie::has('email')){
+            Session::put('email', Cookie::get('email'));
         }
         return $next($request);
     }

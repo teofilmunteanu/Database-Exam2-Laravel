@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\UserController;
+//use App\Http\Controllers\UserController;
 
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/login', [IndexController::class, 'login']);
-Route::get('/main', [IndexController::class, 'main'])->middleware('userAuth');
+Route::any('/login', [IndexController::class, 'login']);
+//Route::any('/signup', [IndexController::class, 'signup']);
+//Route::any('/main', [IndexController::class, 'main'])->middleware('userAuth');
